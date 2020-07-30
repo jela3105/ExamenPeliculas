@@ -65,7 +65,47 @@ public class ALpelicula {
     }
 
     public void cambios() {
+        boolean salir = false;
+        System.out.println("Ingrese la clave de la pelicula a modificar");
+        int clave = sn.nextInt();
+        int posicion = -1;
+        do {
+            for (int i = 0; i < ALPeli.size(); i++) {
+                if (ALPeli.get(i).getClave() == clave) {
+                    posicion = i;
+                }
+            }
+            if (posicion != -1) {
+                boolean modificar = true;
+                while (modificar) {
+                    System.out.println("Clave: " + ALPeli.get(posicion).getClave());
+                    System.out.println("¿Cuál desea modificar?");
+                    System.out.println("1. Titulo: " + ALPeli.get(posicion).getTitulo());
+                    System.out.println("2. Costo: " + ALPeli.get(posicion).getCosto());
+                    int amodificar = sn.nextInt();
 
+                    if (amodificar == 1) {
+                        System.out.println("Ingrese el nuevo nombre");
+                        ALPeli.get(posicion).setTitulo(sn.next());
+                    } else if (amodificar == 2) {
+                        System.out.println("Ingrese el nuevo costo");
+                        ALPeli.get(posicion).setCosto(sn.nextInt());
+                    }
+                    System.out.println("Desea hacer otro cambio a la pelicula?");
+                    System.out.println("SI O NO");
+
+                    if (sn.next().toUpperCase().equals("NO")) {
+                        modificar = false;
+                    }
+                }
+            } else {
+                System.out.println("No existe la pelicula tecleada");
+            }
+            System.out.println("DESEA SALIR DE CAMBIO?");
+            if (sn.next().toUpperCase().equals("NO")) {
+                        salir = false;
+                    }
+        } while (salir == true);
     }
 
     public void consultas() {
@@ -74,7 +114,7 @@ public class ALpelicula {
             System.out.println("Clave: " + ALPeli.get(i).getClave());
             System.out.println("Titulo: " + ALPeli.get(i).getTitulo());
             System.out.println("Costo: " + ALPeli.get(i).getCosto());
-        
+
         }
     }
 }
