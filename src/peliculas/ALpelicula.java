@@ -18,9 +18,9 @@ public class ALpelicula {
     Scanner sn = new Scanner(System.in);
 
     public void altas() {
-        boolean salir=false;
-        
-        do{
+        boolean salir = false;
+
+        do {
             System.out.println("Ingrese la clave");
             Pelicula pelicula = new Pelicula();
             pelicula.setClave(sn.nextInt());
@@ -30,46 +30,51 @@ public class ALpelicula {
             System.out.println("Ingrese el costo");
             pelicula.setCosto(sn.nextInt());
             ALPeli.add(pelicula);
-              System.out.println("Se ha agregado la pelicula correctamente");
-              
-              
-              System.out.println("¿Desea ingresar otro objeto?");
-              System.out.println("SI O NO");
-              
-              
-              if(sn.next().toUpperCase().equals("NO")){
-                  salir=true;
-              }
-        } while(salir == false);
+            System.out.println("Se ha agregado la pelicula correctamente");
+
+            System.out.println("¿Desea ingresar otro objeto?");
+            System.out.println("SI O NO");
+
+            if (sn.next().toUpperCase().equals("NO")) {
+                salir = true;
+            }
+        } while (salir == false);
     }
-    public void bajas(){
+
+    public void bajas() {
         System.out.println("Ingrese la clave del objeto a eliminar");
         int clave = sn.nextInt();
-        int posicion=-1;
-        for(int i=0; i< ALPeli.size() ;i++){
-            if(ALPeli.get(i).getClave()==clave){
+        int posicion = -1;
+        for (int i = 0; i < ALPeli.size(); i++) {
+            if (ALPeli.get(i).getClave() == clave) {
                 posicion = i;
             }
         }
-        if(posicion!=-1){
+        if (posicion != -1) {
             System.out.println("El titulo es: " + ALPeli.get(posicion).getTitulo());
-            System.out.println("El costo es: $"+ ALPeli.get(posicion).getCosto());
+            System.out.println("El costo es: $" + ALPeli.get(posicion).getCosto());
             System.out.println("¿DESEA ELIMINARLO?");
             System.out.println("SI O NO");
-            if(sn.next().toUpperCase().equals("SI")){
-                  ALPeli.remove(posicion);
-                  System.out.println("El objeto se elimino exitosamente");
-              }
-        }else{
+            if (sn.next().toUpperCase().equals("SI")) {
+                ALPeli.remove(posicion);
+                System.out.println("El objeto se elimino exitosamente");
+            }
+        } else {
             System.out.println("No se encontro el objeto");
         }
     }
 
-    void cambios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void cambios() {
+
     }
 
-    void consultas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void consultas() {
+        for (int i = 0; i < ALPeli.size(); i++) {
+            System.out.println("------------------------");
+            System.out.println("Clave: " + ALPeli.get(i).getClave());
+            System.out.println("Titulo: " + ALPeli.get(i).getTitulo());
+            System.out.println("Costo: " + ALPeli.get(i).getCosto());
+        
+        }
     }
 }
