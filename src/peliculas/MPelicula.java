@@ -30,11 +30,11 @@ public class MPelicula {
             if(opcionSeleccionada==1){
                 ALp.altas();
             }else if(opcionSeleccionada==2){
-                
+                ALp.bajas();
             }else if(opcionSeleccionada==3){
-                
+                ALp.cambios();
             }else if(opcionSeleccionada==4){
-                
+                ALp.consultas();
             }else if(opcionSeleccionada==5){
                 salir=true;
             }
