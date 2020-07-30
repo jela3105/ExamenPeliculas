@@ -17,7 +17,7 @@ public class MPelicula {
         Scanner sn = new Scanner(System.in);
         boolean salir = false;
         int opcionSeleccionada;
-        
+        ALpelicula ALp = new ALpelicula();
         while(!salir){
             System.out.println("----------BIENVENIDO----------");
             System.out.println("       Elige una opción        ");
@@ -28,7 +28,7 @@ public class MPelicula {
             System.out.println("5. Salir");
             opcionSeleccionada= sn.nextInt();
             if(opcionSeleccionada==1){
-                
+                ALp.altas();
             }else if(opcionSeleccionada==2){
                 
             }else if(opcionSeleccionada==3){
