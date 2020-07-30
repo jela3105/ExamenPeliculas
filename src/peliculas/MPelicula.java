@@ -8,7 +8,7 @@ package peliculas;
 import java.util.Scanner;
 
 
-public class Peliculas {
+public class MPelicula {
 
     /**
      * @param args the command line arguments
